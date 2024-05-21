@@ -1,3 +1,12 @@
+# Pensamiento Comutacional seccion 11
+#Fecha: 20/05/2024
+#autor: Gabriel Alejandro Rodriguez Riquiac 
+#objetivo: Realizar todas las funciones requeridas por el laboratorio de ADN 
+#entrada: Nombre de sujetos de prueba, Cadena de ADN 
+#procesos: print, while, if, elif, else, .upper, .lower, len, all, next, for, in, and, split, raise, Keyerror, ValueError, return, none, continue, try, except, range, str, list, indexerror, match, case
+#salida: Lista con sujetos de prueba y ADN, contenido de GC en ADN, porcentaje de bases en cadena de ADN, Secuencia mas larga y posicion, similitud entre dos sujetos de prueba, parentezco de dos cadenas
+
+
 PROTEINAS_PERMITIDAS = ["G", "T", "A", "C"]
 
 
