@@ -9,14 +9,14 @@
 
 PROTEINAS_PERMITIDAS = ["G", "T", "A", "C"]
 
-
+#esta funcion es utilizada como un programa funcional, a su vez es la comprobacion de que el nombre no contenga errores de ser inferior a dos palabras
 def solicitar_nombre() -> str:
     nombre = input("Ingrese el nombre completo del sujeto de prueba: ")
     if len(nombre.split()) < 2:
         raise ValueError("El nombre debe constar de al menos dos palabras. Intente nuevamente.")
     return nombre
 
-
+#funcion de programacion funcional, se utiliza para verifcar que el nombre no exista dentro del diccionario global de sujetos de prueba
 def buscar_sujeto_de_prueba() -> str:
     nombre = solicitar_nombre()
 
@@ -25,7 +25,7 @@ def buscar_sujeto_de_prueba() -> str:
     
     return nombre
 
-
+#La cadena de adn es solicitada, verifica que el adn sea un caracter definido para su calculo, a su vez verifica que no sea inferior a 13 caracteres
 def solicitar_adn(nombre: str) -> str:
     adn_es_valido = False
     while not adn_es_valido:
@@ -42,12 +42,12 @@ def solicitar_adn(nombre: str) -> str:
 
     return adn
 
-
+#utilizado para sacar el porcentaje de cad una de las proteinas de las cadenas presentadas
 def contenido_de_proteina(adn: str, proteina: str) -> float:
     contador_proteina = adn.count(proteina)
     return contador_proteina / len(adn) * 100
 
-
+#funcion utilizada para el registro y verificacion continua de los sujetos de prueba
 def registrar_sujetos_de_prueba() -> None:
     desea_continuar = "s"
     while desea_continuar == "s":
@@ -62,7 +62,7 @@ def registrar_sujetos_de_prueba() -> None:
         desea_continuar = input("¿Desea registrar otro sujeto de prueba? (s/n): ")
     return None
 
-
+#funcion utilizada para un ingreso continuo de las cadenas de adn, a su vez de existir cadena presente en el sujeto, se le pregunta al usuario si desea reemplazar la cadena de adn
 def ingresar_cadena_de_adn() -> None:
     desea_continuar = "s"
     while desea_continuar == "s":
@@ -85,7 +85,7 @@ def ingresar_cadena_de_adn() -> None:
 
     return None
 
-
+#funcion continua para lograr el contador en porcentaje para saber que porcentaje de proteina de gc contiene la cadena de adn
 def contenido_de_gc() -> None:
     nombre = buscar_sujeto_de_prueba()
     adn = sujetos_de_prueba[nombre]
@@ -96,7 +96,7 @@ def contenido_de_gc() -> None:
 
     return None
 
-
+#utiliza contadores para lograr saber exactamente el porcentaje de cada una de las proteinas en la cadena de adn 
 def resumen_de_secuencia_de_adn() -> None:
     nombre = buscar_sujeto_de_prueba()
     adn = sujetos_de_prueba[nombre]
@@ -114,7 +114,7 @@ def resumen_de_secuencia_de_adn() -> None:
 
     return None
 
-
+#la secuencia mas larga es determinada en esta funcion 
 def secuencia_mas_larga() -> None:
     nombre = buscar_sujeto_de_prueba()
     adn = sujetos_de_prueba[nombre]
@@ -148,7 +148,7 @@ def secuencia_mas_larga() -> None:
 
     return None
 
-
+#compara dos cadenas de adn de sujetos distintos para comparar el parentezco, sin importar que cantidad de adn tenga el sujeto 
 def porcentaje_de_similitud() -> None:
     nombre1 = buscar_sujeto_de_prueba()
     nombre2 = buscar_sujeto_de_prueba()
